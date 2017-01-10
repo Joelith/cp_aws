@@ -1,0 +1,15 @@
+<ul class="nav nav-tabs">
+  <li role="presentation" class="nav-item"><a href="#general" class="nav-link" data-toggle="tab">General</a></li>
+  <li role="presentation" class="nav-item"><a href="#placement" class="nav-link" data-toggle="tab">Placement</a></li>
+</ul>
+<div class="tab-content ">
+  <div class="tab-pane active" id="general">
+		<%= f.input :name %>
+		<%= f.input :flavor_id, collection: @component.flavors, label_method: lambda { | flav| "#{flav.name} (#{flav.id})"} %>
+	</div>
+	<div class="tab-pane" id="placement">
+		<%= f.input :availability_zone, collection: @component.regions %>
+		<%= f.input :tenancy %>
+		<%= f.input :placement_group %>
+	</div>
+</div>

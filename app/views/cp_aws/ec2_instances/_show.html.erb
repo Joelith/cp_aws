@@ -1,0 +1,35 @@
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+		<div class="row">
+			<div class="col-xs-6 col-lg-4">
+				<div class="card">
+					<div class="card-block p-a-0 clearfix">
+						<i class="fa fa-dollar bg-primary p-a-2 font-2xl m-r-1 pull-left"></i>
+						<div class="h5 text-primary m-b-0 p-t-1"><%= number_to_currency(instance.month_cost) %></div>
+							<div class="text-muted text-uppercase font-weight-bold font-xs">Cost Per Month</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-lg-4">
+				<div class="card">
+					<div class="card-block p-a-0 clearfix">
+						<i class="fa fa-heartbeat bg-<%= instance.attr_get('state') == 'running' ? 'success' : 'danger' %> p-a-2 font-2xl m-r-1 pull-left"></i>
+						<div class="h5 text-<%= instance.attr_get('state') == 'running' ? 'success' : 'danger' %> m-b-0 p-t-1"><%= instance.attr_get('state').capitalize %></div>
+							<div class="text-muted text-uppercase font-weight-bold font-xs">Status</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-lg-4">
+				<div class="card">
+					<div class="card-block p-a-0 clearfix">
+						<i class="fa fa-list-alt bg-info p-a-2 font-2xl m-r-1 pull-left"></i>
+						<div class="h5 text-info m-b-0 p-t-1"><%= instance.attr_get('flavor_id') %></div>
+							<div class="text-muted text-uppercase font-weight-bold font-xs">Flavour</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

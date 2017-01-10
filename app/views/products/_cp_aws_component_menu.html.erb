@@ -1,0 +1,14 @@
+<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AWS<span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+	<% CpAws.active_components.each do | comp | %>
+		<li class="dropdown-item">
+			<% if comp == 'EC2' %>
+				<%= link_to [@product, CpAws::Ec2Component, action: :new] do %>
+					<i class="fa fa-desktop"></i>
+					EC2 Instance
+				<% end %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
